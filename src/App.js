@@ -15,7 +15,13 @@ class App extends React.Component {
       city: '',
       state: '',
       isa: '',
-      additional: ''
+      additional: '',
+      numbers: {
+        mobile: '',
+        office: '',
+        fax: '',
+        other: ''
+      }
     }
   }
 
@@ -34,8 +40,8 @@ onChange = (event) => {
 
   render() {
     return(
-      <div>
-        <div class="user-display">
+      <div class="wrapper">
+        <div class="user-display d-flex justify-content-center">
           <div class='form-container'>
             <form>
               <input
@@ -45,7 +51,6 @@ onChange = (event) => {
                 value={this.state.value} 
                 onChange={this.onChange}
                 placeholder="Full Name"
-                tabIndex="1"
                 required />
             
               <input
@@ -55,7 +60,6 @@ onChange = (event) => {
                 value={this.state.value} 
                 onChange={this.onChange}
                 placeholder="Title"
-                tabIndex="2"
                 required />
               <input
                 class="form-control" 
@@ -64,8 +68,6 @@ onChange = (event) => {
                 value={this.state.value} 
                 onChange={this.onChange}
                 placeholder="Mobile number"
-                tabIndex="3"
-                pattern="[0-9]"
                 required />
                 <small class="form-text text-muted">
                 Enter 10 digit number without any punctuation 
@@ -77,7 +79,6 @@ onChange = (event) => {
                 value={this.state.value} 
                 onChange={this.onChange}
                 placeholder="Office number"
-                tabIndex="4"
                 required />
                 <small class="form-text text-muted">
                 Enter 10 digit number without any punctuation 
@@ -90,7 +91,6 @@ onChange = (event) => {
                 value={this.state.value} 
                 onChange={this.onChange}
                 placeholder="Email"
-                tabIndex="5"
                 required />
               <input
                 class="form-control" 
@@ -99,14 +99,12 @@ onChange = (event) => {
                 value={this.state.value} 
                 onChange={this.onChange}
                 placeholder="City"
-                tabIndex="6"
                 required />
               <select
                 class="form-control" 
                 name="state" 
                 id="state" 
                 onChange={this.onChange}
-                tabIndex="7"
                 required>
                   <option value="" disabled selected>State</option>
                   <option value="AL">Alabama</option>
@@ -168,16 +166,16 @@ onChange = (event) => {
                   type="text" 
                   value={this.state.value} 
                   onChange={this.onChange}
-                  placeholder="ISA Number (optional)"
-                  tabIndex="8" />
+                  placeholder="ISA Number (optional)" />
               <input
                   class="form-control" 
                   name="isa" 
                   type="text" 
                   value={this.state.value} 
                   onChange={this.onChange}
-                  placeholder="Additional Information (optional)"
-                  tabIndex="9" />
+                  placeholder="Additional Information (optional)" />
+
+              <button type="submit" class="btn">Submit</button>
             </form>
           </div>
 
