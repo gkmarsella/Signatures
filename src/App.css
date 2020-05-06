@@ -1,5 +1,40 @@
-form {
-  display: flex;
-  flex-direction: column;
-  background-color: bisque;
+input, select {
+  margin-top: 20px;
+  border: 1px solid;
 }
+
+.user-display {
+  display: flex;
+}
+
+.form-container, .signature-container {
+  background-color: whitesmoke;
+  margin: 0.5cm;
+  width: 40%;
+  padding: 1em;
+}
+
+.form-container {
+  border-radius: 3px;
+  margin: 1%;
+  padding: 1%;
+  box-shadow: .08em .1em .9em .06em rgb(56, 56, 56);
+  padding: 1em 1em 1em;
+}
+
+.desktop-signature {
+  background-color: white;
+  border-radius: 3px;
+  padding: 1%;
+  box-shadow: 2px 2px 5px 1px;
+  padding: 1em 1em 1em;
+  margin-bottom: 2em;
+}
+
+.mobile-signature {
+  background-color: white;
+  padding: 1%;
+  box-shadow: 2px 2px 5px 1px;
+  padding: 1em 1em 1em;
+}
+
