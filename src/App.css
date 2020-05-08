@@ -80,3 +80,8 @@ body {
         -ms-user-select: none;
             user-select: none;
 }
+
+.mobile-box {
+  overflow: scroll;
+  max-height: 100px;
+}

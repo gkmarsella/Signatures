@@ -53,12 +53,11 @@ class Signature extends Component {
 
     return (
       <div>
-
         <p style={{ margin: '0in', marginBottom: '.0001pt', fontSize: '11px', fontFamily: '"Calibri",sans-serif' }}>
           <strong><span style={{ fontSize: '11px', color: '#00703E' }}>{this.props.name}</span></strong><span style={{ fontSize: '11px' }}>&nbsp;| {this.props.title}</span>
         </p>
         <p style={{ margin: '0in', marginBottom: '.0001pt', fontSize: '11px', fontFamily: '"Calibri",sans-serif' }}>
-          {mobileLine} {officeLine} {faxLine} <span><a href={"mailto:" + this.props.email}><span style={{ color: '#0563C1' }}>{this.props.email}</span></a>&nbsp;| {this.props.city}, {this.props.state}<span>&nbsp;| <span><a href="http://www.eci-consulting.com/"><span style={{ color: '#0563C1' }}>www.eci-consulting.com</span></a></span></span></span>
+          {mobileLine} {officeLine} {faxLine} <span><a href={"mailto:" + this.props.email}><span>{this.props.email}</span></a>&nbsp;| {this.props.city}, {this.props.state}<span>&nbsp;| <span><a href="http://www.eci-consulting.com/"><span style={{ color: '#0563C1' }}>www.eci-consulting.com</span></a></span></span></span>
         </p>
         {isaLine}
         {additionalLine}

@@ -18,7 +18,9 @@ class App extends React.Component {
       city: '',
       state: '',
       isa: '',
-      additional: ''
+      additional: '',
+      copied: false,
+      signatureInfo: ''
     }
   }
 
