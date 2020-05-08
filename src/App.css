@@ -12,14 +12,17 @@ body {
   border: .5px solid rgb(104, 104, 104);
 }
 
-.user-display {
-  display: flex;
-  justify-content: center;
+@media only screen and (min-width: 1050px) {
+  .user-display {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .form-container, .signature-container {
   background-color: whitesmoke;
-  width: 40%;
+  width: 90%;
   margin: 1%;
   padding: 1%;
   box-shadow: .08em .1em .9em .06em rgb(56, 56, 56);
