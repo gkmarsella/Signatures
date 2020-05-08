@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import PhoneInput from 'react-phone-input-2';
 import Signature from './Signature';
 import MobileSignature from './MobileSignature';
 
@@ -32,14 +33,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div class="wrapper">
+      <div className="wrapper">
 
-        <div class="user-display">
-          <div class='form-container'>
+        <div className="user-display">
+          <div className='form-container'>
             <form>
-              <div class="line-1 input-box">
+              <div className="line-1 input-box">
                 <input
-                  class="form-control mb-3"
+                  className="form-control mb-3"
                   name="name"
                   type="text"
                   value={this.state.value}
@@ -48,7 +49,7 @@ class App extends React.Component {
                   required />
 
                 <input
-                  class="form-control"
+                  className="form-control"
                   name="title"
                   type="text"
                   value={this.state.value}
@@ -57,35 +58,56 @@ class App extends React.Component {
                   required />
               </div>
 
-              <div class="line-2 input-box">
-                <div class="phoneNumbers">
-                  <input
-                    class="form-control mb-3"
+              <div className="line-2 input-box">
+                <div className="phoneNumbers">
+
+                  <div className="mb-3">
+                  <PhoneInput
+                    disableDropdown={'true'}
+                    country={'us'}
+                    onlyCountries={['us']}
+                    disableCountryCode={'true'}
+                    disableSearchIcon={'true'}
                     name="mobile"
                     type="tel"
                     value={this.state.value}
-                    onChange={this.onChange}
-                    placeholder="Mobile number"/>
+                    onChange={mobile => this.setState({mobile})}
+                    placeholder="Mobile number" />
+                  </div>
                     
-                  <input
-                    class="form-control mb-3"
+                  <div className="mb-3">
+                    <PhoneInput
+                    className="form-control mb-3 phone-input"
+                    disableDropdown={'true'}
+                    country={'us'}
+                    onlyCountries={['us']}
+                    disableCountryCode={'true'}
+                    disableSearchIcon={'true'}
                     name="office"
                     type="tel"
                     value={this.state.value}
-                    onChange={this.onChange}
-                    placeholder="Office number"/>
+                    onChange={office => this.setState({office})}
+                    placeholder="Office number" />
+                  </div>
 
-                  <input
-                    class="form-control mb-3"
-                    name="fax"
-                    type="tel"
-                    value={this.state.value}
-                    onChange={this.onChange}
-                    placeholder="Fax number" />
+                  <div className="mb-3">
+                    <PhoneInput
+                      className="form-control mb-3 phone-input"
+                      disableDropdown={'true'}
+                      country={'us'}
+                      onlyCountries={['us']}
+                      disableCountryCode={'true'}
+                      disableSearchIcon={'true'}
+                      name="fax"
+                      type="tel"
+                      value={this.state.value}
+                      onChange={fax => this.setState({fax})}
+                      placeholder="Fax number" />
+                  </div>
                 </div>
 
                 <input
-                  class="form-control mb-3"
+                  className="form-control mb-3"
                   name="email"
                   type="email"
                   value={this.state.value}
@@ -93,7 +115,7 @@ class App extends React.Component {
                   placeholder="Email"
                   required />
                 <input
-                  class="form-control mb-3"
+                  className="form-control mb-3"
                   name="city"
                   type="text"
                   value={this.state.value}
@@ -102,12 +124,12 @@ class App extends React.Component {
                   required />
 
                 <select
-                  class="form-control"
+                  className="form-control"
                   name="state"
                   id="state"
                   onChange={this.onChange}
                   required>
-                  <option value="" disabled selected>State</option>
+                  <option value="" disabled defaultValue>State</option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
                   <option value="AZ">Arizona</option>
@@ -162,31 +184,31 @@ class App extends React.Component {
                 </select>
 
               </div>
-              <div class="line-3 input-box">
+              <div className="line-3 input-box">
                 <input
-                  class="form-control mb-3"
+                  className="form-control mb-3"
                   name="isa"
                   type="text"
                   value={this.state.value}
                   onChange={this.onChange}
                   placeholder="ISA Number (optional)" />
                 <input
-                  class="form-control"
+                  className="form-control"
                   name="additional"
                   type="text"
                   value={this.state.value}
                   onChange={this.onChange}
                   placeholder="Additional Information (optional)" />
 
-                <button type="submit" class="btn" id="submit-button">Submit</button>
+                <button type="submit" className="btn" id="submit-button">Submit</button>
               </div>
             </form>
           </div>
 
 
 
-          <div class="signature-container">
-            <div class="desktop-signature noselect">
+          <div className="signature-container">
+            <div className="desktop-signature noselect">
               <Signature
                 name={this.state.name}
                 title={this.state.title}
@@ -200,7 +222,7 @@ class App extends React.Component {
                 additional={this.state.additional} />
             </div>
 
-            <div class="mobile-signature">
+            <div className="mobile-signature">
               <MobileSignature
                 name={this.state.name}
                 title={this.state.title}

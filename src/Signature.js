@@ -3,19 +3,34 @@ import React, { Component } from 'react';
 class Signature extends Component {
   render() {
 
+    function formatPhoneNumber(phoneNumberString) {
+      var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+      var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+      if (match) {
+        return '(' + match[1] + ') ' + match[2] + '-' + match[3]
+      }
+      return '';
+    }
+
+    let mobileNumber = this.props.mobile;
+    mobileNumber = formatPhoneNumber(mobileNumber);
     let mobileLine = <span></span>;
-    if (this.props.mobile !== ``) {
-      mobileLine = <span style={{ fontSize: '13px' }}>m: {this.props.mobile} | </span>
+    if (mobileNumber !== '') {
+      mobileLine = <span style={{ fontSize: '13px' }}>m: {mobileNumber} | </span>
     }
 
+    let officeNumber = this.props.office;
+    officeNumber = formatPhoneNumber(officeNumber);
     let officeLine = <span></span>;
-    if (this.props.office !== '') {
-      officeLine = <span style={{ fontSize: '11px' }}>o: {this.props.office} | </span>
+    if (officeNumber !== '') {
+      officeLine = <span style={{ fontSize: '11px' }}>o: {officeNumber} | </span>
     }
 
+    let faxNumber = this.props.fax;
+    faxNumber = formatPhoneNumber(faxNumber);
     let faxLine = <span></span>;
-    if (this.props.fax !== '') {
-      faxLine = <span style={{ fontSize: '11px' }}>f: {this.props.fax} | </span>
+    if (faxNumber !== '') {
+      faxLine = <span style={{ fontSize: '11px' }}>f: {faxNumber} | </span>
     }
 
     let isaLine = <span></span>;
@@ -38,6 +53,7 @@ class Signature extends Component {
 
     return (
       <div>
+
         <p style={{ margin: '0in', marginBottom: '.0001pt', fontSize: '11px', fontFamily: '"Calibri",sans-serif' }}>
           <strong><span style={{ fontSize: '11px', color: '#00703E' }}>{this.props.name}</span></strong><span style={{ fontSize: '11px' }}>&nbsp;| {this.props.title}</span>
         </p>
