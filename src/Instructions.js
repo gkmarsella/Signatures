@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Instructions = (props) => {
+  
   return (
     <div>
       <div id="accordion">

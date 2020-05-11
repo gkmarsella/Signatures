@@ -108,3 +108,7 @@ body {
   align-items: center;
   align-content: center;
 }
+.btn-link {
+  width: 100%;
+  height: 100%;
+}
