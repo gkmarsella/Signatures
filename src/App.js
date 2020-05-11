@@ -3,7 +3,6 @@ import './App.css';
 import PhoneInput from 'react-phone-input-2';
 import Signature from './Signature';
 import MobileSignature from './MobileSignature';
-import Instructions from './Instructions';
 
 
 class App extends React.Component {
@@ -22,7 +21,6 @@ class App extends React.Component {
       additional: '',
       copied: false
     }
-    this.submitRef = React.createRef();
   }
   
 
@@ -35,12 +33,9 @@ class App extends React.Component {
     })
   }
 
-  clickHandler = (e) => {
-    this.submitRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
     render() {
     return (
-      <div className="wrapper">
+      <div className="wrapper justify-content-center d-flex">
         <div className="user-display">
           <div className='form-container'>
             <form onSubmit={this.stopSubmit}>
@@ -205,11 +200,9 @@ class App extends React.Component {
                   value={this.state.value}
                   onChange={this.onChange}
                   placeholder="Additional Information (optional)" />
-
-                {/* <button type="button" name="submit" className="btn" id="eci-button" onClick={this.clickHandler}>Submit</button> */}
-
-                <div className="mobile-signature input-box" ref={this.submitRef}>
-                <button type="button" class="btn eci-button" data-toggle="modal" data-target="#desktopSignatureModal">Copy signature for Desktop</button>
+              </div>
+              <div className="mobile-signature input-box">
+                <button type="button" className="btn eci-button" data-toggle="modal" data-target="#desktopSignatureModal">Copy signature for Desktop</button>
                   <MobileSignature 
                     name={this.state.name}
                     title={this.state.title}
@@ -222,13 +215,13 @@ class App extends React.Component {
                     isa={this.state.isa}
                     additional={this.state.additional} />
                 </div>
-              </div>
             </form>
           </div>
 
 
 
-          <div className="signature-container">
+          <div className="signature-container noselect">
+            <label><strong>Signature Preview</strong></label>
             <div className="desktop-signature">
               <Signature
                 name={this.state.name}
@@ -245,16 +238,16 @@ class App extends React.Component {
           </div>
 
         </div>
-        <div class="modal fade" id="desktopSignatureModal" tabindex="-1" role="dialog" aria-labelledby="desktopSignatureModalTitle" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header noselect">
+        <div className="modal fade" id="desktopSignatureModal" tabIndex="-1" role="dialog" aria-labelledby="desktopSignatureModalTitle" aria-hidden="true">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header noselect">
                 <h6>Highlight and copy all content in this modal to paste into your signature box on your Microsoft Outlook cesktop application. If you want to set your signature for iOS, close out of this modal and click the button 'Copy signature for iOS'.</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div className="modal-body">
               <Signature
                 name={this.state.name}
                 title={this.state.title}

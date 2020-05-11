@@ -85,7 +85,7 @@ class MobileSignature extends Component {
         <div>
         <CopyToClipboard text={htmlSignature}
           onCopy={() => this.setState({copied: true})}>
-          <button type="button" class="btn eci-button" onClick={this.handleClickShowAlert.bind(this)} data-container="body" data-toggle="popover" data-placement="top" data-content="Copied to clipboard!">Copy signature for iOS</button>
+          <button type="button" className="btn eci-button" onClick={this.handleClickShowAlert.bind(this)} data-container="body" data-toggle="popover" data-placement="top" data-content="Copied to clipboard!">Copy signature for iOS</button>
         </CopyToClipboard>
           <div className={`text-center alert alert-warning ${this.state.showingAlert ? 'alert-shown' : 'alert-hidden'}`}><strong>Copied to clipboard!</strong></div>
         </div>

@@ -22,7 +22,7 @@ body {
 
 .form-container, .signature-container {
   background-color: whitesmoke;
-  width: 90%;
+  width: 100%;
   margin: 1%;
   padding: 1%;
   box-shadow: .08em .1em .9em .06em rgb(56, 56, 56);
@@ -30,6 +30,10 @@ body {
   border-radius: 3px;
   box-shadow: .08em .1em .9em .06em rgb(56, 56, 56);
   padding: 1em 1em 1em;
+}
+
+.signature-container {
+  height: fit-content;
 }
 
 .desktop-signature {
