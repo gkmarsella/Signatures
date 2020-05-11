@@ -3,6 +3,7 @@ import './App.css';
 import PhoneInput from 'react-phone-input-2';
 import Signature from './Signature';
 import MobileSignature from './MobileSignature';
+import Instructions from './Instructions';
 
 
 class App extends React.Component {
@@ -19,10 +20,11 @@ class App extends React.Component {
       state: '',
       isa: '',
       additional: '',
-      copied: false,
-      signatureInfo: ''
+      copied: false
     }
+    this.submitRef = React.createRef();
   }
+  
 
   onChange = (event) => {
     const targetName = event.target.name;
@@ -33,13 +35,15 @@ class App extends React.Component {
     })
   }
 
-  render() {
+  clickHandler = (e) => {
+    this.submitRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+    render() {
     return (
       <div className="wrapper">
-
         <div className="user-display">
           <div className='form-container'>
-            <form>
+            <form onSubmit={this.stopSubmit}>
               <div className="line-1 input-box">
                 <input
                   className="form-control mb-3"
@@ -64,32 +68,32 @@ class App extends React.Component {
                 <div className="phoneNumbers">
 
                   <div className="mb-3">
-                  <PhoneInput
-                    disableDropdown={'true'}
-                    country={'us'}
-                    onlyCountries={['us']}
-                    disableCountryCode={'true'}
-                    disableSearchIcon={'true'}
-                    name="mobile"
-                    type="tel"
-                    value={this.state.value}
-                    onChange={mobile => this.setState({mobile})}
-                    placeholder="Mobile number" />
+                    <PhoneInput
+                      disableDropdown={'true'}
+                      country={'us'}
+                      onlyCountries={['us']}
+                      disableCountryCode={'true'}
+                      disableSearchIcon={'true'}
+                      name="mobile"
+                      type="tel"
+                      value={this.state.value}
+                      onChange={mobile => this.setState({ mobile })}
+                      placeholder="Mobile number" />
                   </div>
-                    
+
                   <div className="mb-3">
                     <PhoneInput
-                    className="form-control mb-3 phone-input"
-                    disableDropdown={'true'}
-                    country={'us'}
-                    onlyCountries={['us']}
-                    disableCountryCode={'true'}
-                    disableSearchIcon={'true'}
-                    name="office"
-                    type="tel"
-                    value={this.state.value}
-                    onChange={office => this.setState({office})}
-                    placeholder="Office number" />
+                      className="form-control mb-3 phone-input"
+                      disableDropdown={'true'}
+                      country={'us'}
+                      onlyCountries={['us']}
+                      disableCountryCode={'true'}
+                      disableSearchIcon={'true'}
+                      name="office"
+                      type="tel"
+                      value={this.state.value}
+                      onChange={office => this.setState({ office })}
+                      placeholder="Office number" />
                   </div>
 
                   <div className="mb-3">
@@ -103,7 +107,7 @@ class App extends React.Component {
                       name="fax"
                       type="tel"
                       value={this.state.value}
-                      onChange={fax => this.setState({fax})}
+                      onChange={fax => this.setState({ fax })}
                       placeholder="Fax number" />
                   </div>
                 </div>
@@ -202,7 +206,22 @@ class App extends React.Component {
                   onChange={this.onChange}
                   placeholder="Additional Information (optional)" />
 
-                <button type="submit" className="btn" id="submit-button">Submit</button>
+                {/* <button type="button" name="submit" className="btn" id="eci-button" onClick={this.clickHandler}>Submit</button> */}
+
+                <div className="mobile-signature input-box" ref={this.submitRef}>
+                <button type="button" class="btn eci-button" data-toggle="modal" data-target="#desktopSignatureModal">Copy signature for Desktop</button>
+                  <MobileSignature 
+                    name={this.state.name}
+                    title={this.state.title}
+                    mobile={this.state.mobile}
+                    office={this.state.office}
+                    fax={this.state.fax}
+                    email={this.state.email}
+                    city={this.state.city}
+                    state={this.state.state}
+                    isa={this.state.isa}
+                    additional={this.state.additional} />
+                </div>
               </div>
             </form>
           </div>
@@ -210,22 +229,8 @@ class App extends React.Component {
 
 
           <div className="signature-container">
-            <div className="desktop-signature noselect">
+            <div className="desktop-signature">
               <Signature
-                name={this.state.name}
-                title={this.state.title}
-                mobile={this.state.mobile}
-                office={this.state.office}
-                fax={this.state.fax}
-                email={this.state.email}
-                city={this.state.city}
-                state={this.state.state}
-                isa={this.state.isa}
-                additional={this.state.additional} />
-            </div>
-
-            <div className="mobile-signature">
-              <MobileSignature
                 name={this.state.name}
                 title={this.state.title}
                 mobile={this.state.mobile}
@@ -240,7 +245,31 @@ class App extends React.Component {
           </div>
 
         </div>
-
+        <div class="modal fade" id="desktopSignatureModal" tabindex="-1" role="dialog" aria-labelledby="desktopSignatureModalTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header noselect">
+                <h6>Highlight and copy all content in this modal to paste into your signature box on your Microsoft Outlook cesktop application. If you want to set your signature for iOS, close out of this modal and click the button 'Copy signature for iOS'.</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              <Signature
+                name={this.state.name}
+                title={this.state.title}
+                mobile={this.state.mobile}
+                office={this.state.office}
+                fax={this.state.fax}
+                email={this.state.email}
+                city={this.state.city}
+                state={this.state.state}
+                isa={this.state.isa}
+                additional={this.state.additional} />
+              </div>
+            </div>
+          </div>
+        </div>
       </div >
     );
   }

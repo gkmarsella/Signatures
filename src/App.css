@@ -48,7 +48,7 @@ body {
   padding: 1em 1em 1em;
 }
 
-#submit-button {
+.eci-button {
   background-color: rgb(0, 112, 62);
   color: white;
   font-weight: bold; 
@@ -59,7 +59,7 @@ body {
   margin-top: 1em;
 }
 
-#submit-button:hover {
+.eci-button:hover {
   background-color: rgb(0, 151, 83);
   transition:all 0.3s ease;
 }
@@ -84,4 +84,23 @@ body {
 .mobile-box {
   overflow: scroll;
   max-height: 100px;
+}
+
+.alert-shown {
+  opacity: 1;
+  transition: all 250ms linear;
+}
+
+.alert-hidden {
+  opacity: 0;
+  transition: all 250ms linear;
+}
+
+.alert {
+  position: fixed;
+  top: 5px; 
+  left:2%;
+  width: 96%;
+  align-items: center;
+  align-content: center;
 }
