@@ -3,7 +3,7 @@ import './App.css';
 import PhoneInput from 'react-phone-input-2';
 import Signature from './Signature';
 import MobileSignature from './MobileSignature';
-// import Instructions from './Instructions';
+import DesktopInstructions from './DesktopInstructions';
 
 
 class App extends React.Component {
@@ -20,7 +20,8 @@ class App extends React.Component {
       state: '',
       isa: '',
       additional: '',
-      copied: false
+      copied: false,
+      progress: 0
     }
   }
   
@@ -35,13 +36,24 @@ class App extends React.Component {
   }
 
     render() {
+      let progress = this.state.progress;
+      let nameValid = this.state.name;
+      let titleValid = this.state.titlename;
+      let emailValid = this.state.emailname;
+      let cityValid = this.state.cityname;
+      let stateValid =this.state.statename;
+
     return (
       <div>
-        {/* <Instructions /> */}
+
+          
         <div className="wrapper justify-content-center d-flex">
           <div className="user-display">
             <div className='form-container'>
               <form>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style={{width: {progress}}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
                 <div className="line-1 input-box">
                   <input
                     className="form-control mb-3"
@@ -219,6 +231,7 @@ class App extends React.Component {
                       additional={this.state.additional} />
                   </div>
               </form>
+              <DesktopInstructions />
             </div>
 
 
@@ -239,8 +252,8 @@ class App extends React.Component {
                   additional={this.state.additional} />
               </div>
             </div>
-
           </div>
+
           <div className="modal fade" id="desktopSignatureModal" tabIndex="-1" role="dialog" aria-labelledby="desktopSignatureModalTitle" aria-hidden="true">
             <div className="modal-dialog" role="document">
               <div className="modal-content">
