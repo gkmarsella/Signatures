@@ -4,6 +4,7 @@ import PhoneInput from 'react-phone-input-2';
 import Signature from './Signature';
 import MobileSignature from './MobileSignature';
 import DesktopInstructions from './DesktopInstructions';
+import MobileInstructions from './MobileInstructions';
 
 
 class App extends React.Component {
@@ -232,6 +233,7 @@ class App extends React.Component {
                   </div>
               </form>
               <DesktopInstructions />
+              <MobileInstructions />
             </div>
 
 

@@ -9,22 +9,22 @@ const DesktopInstructions = (props) => {
 
   return (
     <div>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DesktopInstructionsModal">
         Desktop Instructions
       </button>
 
-      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+      <div class="modal fade" id="DesktopInstructionsModal" tabindex="-1" role="dialog" aria-labelledby="DesktopInstructionsModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header bg-info text-white">
-              <h5 class="modal-title" id="exampleModalLongTitle"><strong>Desktop Instructions</strong></h5>
+              <h5 class="modal-title" id="DesktopInstructionsModalTitle"><strong>Desktop Instructions</strong></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body instructions-modal-body">
               <div className="card instructions-card" src={Dstep1} data-toggle="modal" data-target="#Dstep1">
-                <h5 className="card-header bg-info text-white">Step 1</h5>
+                <h5 className="card-header bg-info text-white">Step 1: Fill out form and copy signature</h5>
                 <div className="card-body">
                   <p className="card-text">Fill out the form below and click <strong>Copy signature for Desktop</strong> > highlight your signature and copy by pressing <em>ctrl + c</em> or <em>right click > copy</em></p>
                 </div>
@@ -32,7 +32,7 @@ const DesktopInstructions = (props) => {
               </div>
 
               <div className="card instructions-card" src={Dstep2} data-toggle="modal" data-target="#Dstep2">
-                <h5 className="card-header bg-info text-white">Step 2</h5>
+                <h5 className="card-header bg-info text-white">Step 2: Open account options</h5>
                 <div className="card-body">
                   <p className="card-text">In your outlook Desktop application click <strong>File</strong> > <strong>Options</strong></p>
                 </div>
@@ -40,7 +40,7 @@ const DesktopInstructions = (props) => {
               </div>
 
               <div className="card instructions-card" data-toggle="modal" data-target="#Dstep3" >
-                <h5 className="card-header bg-info text-white">Step 3</h5>
+                <h5 className="card-header bg-info text-white">Step 3: Open your signatures panel</h5>
                 <div className="card-body">
                   <p className="card-text">Go to <strong>Mail</strong> > <strong>Signatures</strong></p>
                 </div>
@@ -48,7 +48,7 @@ const DesktopInstructions = (props) => {
               </div>
 
               <div className="card instructions-card" data-toggle="modal" data-target="#Dstep4">
-                <h5 className="card-header bg-info text-white">Step 4</h5>
+                <h5 className="card-header bg-info text-white">Step 4: Create a new signature</h5>
                 <div className="card-body">
                   <p className="card-text">Click <strong>New</strong> then enter a name for your signature and click <strong>OK</strong></p>
                 </div>
@@ -56,7 +56,7 @@ const DesktopInstructions = (props) => {
               </div>
 
               <div className="card instructions-card" data-toggle="modal" data-target="#Dstep5">
-                <h5 className="card-header bg-info text-white">Step 5</h5>
+                <h5 className="card-header bg-info text-white">Step 5: Assign your new signature</h5>
                 <div className="card-body">
                   <p className="card-text">Paste your signature into the <em>Edit signature</em> box, then assign your signature to <em>New messages</em> and <em>Replies/forward</em> and click <strong>OK</strong></p>
                 </div>

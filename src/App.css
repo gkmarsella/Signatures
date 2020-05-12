@@ -135,6 +135,18 @@ body {
   border: 1px solid black;
 }
 
-.modal-body {
+.instructions-modal-body {
   background-color: rgb(193, 194, 194);
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+}
+
+.card-outline {
+  /* box-shadow: 0px 2px 5px 1px; */
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.card-text-outline {
+  box-shadow: 0px 1px 5px;
 }
