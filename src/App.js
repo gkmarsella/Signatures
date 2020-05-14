@@ -6,7 +6,6 @@ import MobileSignature from './MobileSignature';
 import DesktopInstructions from './DesktopInstructions';
 import MobileInstructions from './MobileInstructions';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -22,10 +21,9 @@ class App extends React.Component {
       isa: '',
       additional: '',
       copied: false,
-      progress: 0
+      formValidated: false
     }
   }
-  
 
   onChange = (event) => {
     const targetName = event.target.name;
@@ -36,43 +34,49 @@ class App extends React.Component {
     })
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.setState({
+      formValidated: true
+    })
+  }
+
     render() {
-      let progress = this.state.progress;
-      let nameValid = this.state.name;
-      let titleValid = this.state.titlename;
-      let emailValid = this.state.emailname;
-      let cityValid = this.state.cityname;
-      let stateValid =this.state.statename;
-
     return (
-      <div>
-
-          
+      <div> 
         <div className="wrapper justify-content-center d-flex">
           <div className="user-display">
             <div className='form-container'>
-              <form>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style={{width: {progress}}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div className="form-header">
+              <h5 className="card-header">Please complete this form and follow the instructions below to create your ECI email signature.</h5>
+              <div className="instructions-container">
+                <MobileInstructions />
+                <DesktopInstructions />
               </div>
+              </div>
+              <form onSubmit={e => this.handleSubmit(e)}>
                 <div className="line-1 input-box">
-                  <input
-                    className="form-control mb-3"
-                    name="name"
-                    type="text"
-                    value={this.state.value}
-                    onChange={this.onChange}
-                    placeholder="Full Name"
-                    required />
-
-                  <input
-                    className="form-control"
-                    name="title"
-                    type="text"
-                    value={this.state.value}
-                    onChange={this.onChange}
-                    placeholder="Title"
-                    required />
+                  <div className="mb-3 form-group">
+                    <input
+                      id="validationCustom01"
+                      className="form-control"
+                      name="name"
+                      type="text"
+                      value={this.state.value}
+                      onChange={this.onChange}
+                      placeholder="Full Name"
+                      required />
+                  </div>
+                    
+                    <input
+                      className="form-control"
+                      name="title"
+                      type="text"
+                      value={this.state.value}
+                      onChange={this.onChange}
+                      placeholder="Title"
+                      required />
                 </div>
 
                 <div className="line-2 input-box">
@@ -89,7 +93,7 @@ class App extends React.Component {
                         type="tel"
                         value={this.state.value}
                         onChange={mobile => this.setState({ mobile })}
-                        placeholder="Mobile number" />
+                        placeholder="Mobile number" /> 
                     </div>
 
                     <div className="mb-3">
@@ -123,22 +127,27 @@ class App extends React.Component {
                     </div>
                   </div>
 
-                  <input
-                    className="form-control mb-3"
-                    name="email"
-                    type="email"
-                    value={this.state.value}
-                    onChange={this.onChange}
-                    placeholder="Email"
-                    required />
-                  <input
-                    className="form-control mb-3"
-                    name="city"
-                    type="text"
-                    value={this.state.value}
-                    onChange={this.onChange}
-                    placeholder="City"
-                    required />
+                  <div className="mb-3">
+                    <input
+                      className="form-control"
+                      name="email"
+                      type="email"
+                      value={this.state.value}
+                      onChange={this.onChange}
+                      placeholder="Email"
+                      required />
+                    </div>
+
+                  <div className="mb-3">
+                    <input
+                      className="form-control"
+                      name="city"
+                      type="text"
+                      value={this.state.value}
+                      onChange={this.onChange}
+                      placeholder="City"
+                      required />
+                  </div>
 
                   <select
                     className="form-control"
@@ -146,7 +155,7 @@ class App extends React.Component {
                     id="state"
                     onChange={this.onChange}
                     required>
-                    <option value="" disabled defaultValue>State</option>
+                    <option value=""  defaultValue>State</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
@@ -199,6 +208,7 @@ class App extends React.Component {
                     <option value="WI">Wisconsin</option>
                     <option value="WY">Wyoming</option>
                   </select>
+  
 
                 </div>
                 <div className="line-3 input-box">
@@ -217,7 +227,8 @@ class App extends React.Component {
                     onChange={this.onChange}
                     placeholder="Additional Information (optional)" />
                 </div>
-                <div className="mobile-signature input-box">
+
+                <div className="">
                   <button type="button" className="btn eci-button" data-toggle="modal" data-target="#desktopSignatureModal">Copy signature for Desktop</button>
                     <MobileSignature 
                       name={this.state.name}
@@ -232,14 +243,12 @@ class App extends React.Component {
                       additional={this.state.additional} />
                   </div>
               </form>
-              <DesktopInstructions />
-              <MobileInstructions />
             </div>
 
 
 
             <div className="signature-container noselect">
-              <label><strong>Signature Preview</strong></label>
+              <div className="card-header"><h5><strong>Signature Preview</strong></h5></div>
               <div className="desktop-signature">
                 <Signature
                   name={this.state.name}
