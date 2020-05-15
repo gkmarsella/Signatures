@@ -268,7 +268,7 @@ class App extends React.Component {
             <div className="modal-dialog" role="document">
               <div className="modal-content">
                 <div className="modal-header noselect">
-                  <h6>Highlight and copy all content in this modal to paste into your signature box on your Microsoft Outlook desktop application. If you want to set your signature for iOS, close out of this modal and click the button 'Copy signature for iOS'.</h6>
+                  <h6>Highlight and copy all the content in this modal and and follow the desktop directions listed at the top of the form. If you want to set your signature for iOS, close out of this modal and click the "Copy signature for iOS" button.</h6>
                   <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
