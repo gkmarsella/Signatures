@@ -67,14 +67,13 @@ class Signature extends Component {
       stateComma = ","
     }
 
-
     return (
       <div>
         <p style={{ margin: '0in', marginBottom: '.0001pt', fontSize: '10pt', fontFamily: '"Calibri",sans-serif' }}>
           <strong><span style={{ fontSize: '10pt', color: '#00703E' }}>{this.props.name}</span></strong><span style={{ fontSize: '10pt' }}> {titlePipe} {this.props.title}</span>
         </p>
         <p style={{ margin: '0in', marginBottom: '.0001pt', fontSize: '10pt', fontFamily: '"Calibri",sans-serif' }}>
-          {mobileLine} {officeLine} {faxLine} <span><a href={"mailto:" + this.props.email}><span>{this.props.email}</span></a> {cityPipe} {this.props.city}{stateComma} {this.props.state}<span>&nbsp; </span></span>
+          {mobileLine} {officeLine} {faxLine} <span><a href={"mailto:" + this.props.email}><span>{this.props.email}</span></a> {cityPipe} {this.props.city}{stateComma} {this.props.state}<span> | <a href="https://www.eci-consulting.com/">www.eci-consulting.com</a> </span></span>
         </p>
         {isaLine}
         {additionalLine}
