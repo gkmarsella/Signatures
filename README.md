@@ -24,6 +24,6 @@ After cloning the repo and installing all dependencies type ```npm start``` to r
 
 - [React](http://facebook.github.io/react) is used for UI.
 - [Bootstrap](https://getbootstrap.com/) is used for styling.
-- [React-phone-input-2](https://github.com/bl00mber/react-phone-input-2) is used for autoformatting user phone inputs.
+- [React-phone-input-2](https://github.com/bl00mber/react-phone-input-2) is used to automatically format user phone inputs.
 - [React-copy-to-clipboard](https://www.npmjs.com/package/react-copy-to-clipboard) is used to copy the mobile html string to the clipboard.
 
