@@ -4,7 +4,7 @@
 
 This is a web application used to create standardized ECI email signatures on outlook for Desktop and Mobile.
 
-### Installation
+## Installation
 
 You will need `node` and `npm` installed globally to run this project.
 
