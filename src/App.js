@@ -42,18 +42,18 @@ class App extends React.Component {
     })
   }
 
-    render() {
+  render() {
     return (
-      <div> 
+      <div>
         <div className="wrapper justify-content-center d-flex">
           <div className="user-display">
             <div className='form-container'>
               <div className="form-header">
-              <h5 className="card-header">Please complete this form and follow the instructions below to create your ECI email signature.</h5>
-              <div className="instructions-container">
-                <MobileInstructions />
-                <DesktopInstructions />
-              </div>
+                <h5 className="card-header">Please complete this form and follow the instructions below for setting up your ECI email signature on Outlook.</h5>
+                <div className="instructions-container">
+                  <MobileInstructions />
+                  <DesktopInstructions />
+                </div>
               </div>
               <form onSubmit={e => this.handleSubmit(e)}>
                 <div className="line-1 input-box">
@@ -68,15 +68,15 @@ class App extends React.Component {
                       placeholder="Full Name"
                       required />
                   </div>
-                    
-                    <input
-                      className="form-control"
-                      name="title"
-                      type="text"
-                      value={this.state.value}
-                      onChange={this.onChange}
-                      placeholder="Title"
-                      required />
+
+                  <input
+                    className="form-control"
+                    name="title"
+                    type="text"
+                    value={this.state.value}
+                    onChange={this.onChange}
+                    placeholder="Title"
+                    required />
                 </div>
 
                 <div className="line-2 input-box">
@@ -93,7 +93,7 @@ class App extends React.Component {
                         type="tel"
                         value={this.state.value}
                         onChange={mobile => this.setState({ mobile })}
-                        placeholder="Mobile number" /> 
+                        placeholder="Mobile number (optional)" />
                     </div>
 
                     <div className="mb-3">
@@ -108,7 +108,7 @@ class App extends React.Component {
                         type="tel"
                         value={this.state.value}
                         onChange={office => this.setState({ office })}
-                        placeholder="Office number" />
+                        placeholder="Office number (optional)" />
                     </div>
 
                     <div className="mb-3">
@@ -123,7 +123,7 @@ class App extends React.Component {
                         type="tel"
                         value={this.state.value}
                         onChange={fax => this.setState({ fax })}
-                        placeholder="Fax number" />
+                        placeholder="Fax number (optional)" />
                     </div>
                   </div>
 
@@ -136,7 +136,7 @@ class App extends React.Component {
                       onChange={this.onChange}
                       placeholder="Email"
                       required />
-                    </div>
+                  </div>
 
                   <div className="mb-3">
                     <input
@@ -155,7 +155,7 @@ class App extends React.Component {
                     id="state"
                     onChange={this.onChange}
                     required>
-                    <option value=""  defaultValue>State</option>
+                    <option value="" defaultValue>State</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
@@ -208,7 +208,6 @@ class App extends React.Component {
                     <option value="WI">Wisconsin</option>
                     <option value="WY">Wyoming</option>
                   </select>
-  
 
                 </div>
                 <div className="line-3 input-box">
@@ -230,18 +229,18 @@ class App extends React.Component {
 
                 <div className="">
                   <button type="button" className="btn eci-button" data-toggle="modal" data-target="#desktopSignatureModal">Copy signature for Desktop</button>
-                    <MobileSignature 
-                      name={this.state.name}
-                      title={this.state.title}
-                      mobile={this.state.mobile}
-                      office={this.state.office}
-                      fax={this.state.fax}
-                      email={this.state.email}
-                      city={this.state.city}
-                      state={this.state.state}
-                      isa={this.state.isa}
-                      additional={this.state.additional} />
-                  </div>
+                  <MobileSignature
+                    name={this.state.name}
+                    title={this.state.title}
+                    mobile={this.state.mobile}
+                    office={this.state.office}
+                    fax={this.state.fax}
+                    email={this.state.email}
+                    city={this.state.city}
+                    state={this.state.state}
+                    isa={this.state.isa}
+                    additional={this.state.additional} />
+                </div>
               </form>
             </div>
 
@@ -275,17 +274,17 @@ class App extends React.Component {
                   </button>
                 </div>
                 <div className="modal-body">
-                <Signature
-                  name={this.state.name}
-                  title={this.state.title}
-                  mobile={this.state.mobile}
-                  office={this.state.office}
-                  fax={this.state.fax}
-                  email={this.state.email}
-                  city={this.state.city}
-                  state={this.state.state}
-                  isa={this.state.isa}
-                  additional={this.state.additional} />
+                  <Signature
+                    name={this.state.name}
+                    title={this.state.title}
+                    mobile={this.state.mobile}
+                    office={this.state.office}
+                    fax={this.state.fax}
+                    email={this.state.email}
+                    city={this.state.city}
+                    state={this.state.state}
+                    isa={this.state.isa}
+                    additional={this.state.additional} />
                 </div>
               </div>
             </div>

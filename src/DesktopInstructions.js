@@ -29,7 +29,7 @@ const DesktopInstructions = (props) => {
               <div className="card instructions-card">
                 <h5 className="card-header bg-info text-white">Step 1: Fill out the form and copy signature</h5>
                 <div className="card-body">
-                  <p className="card-text">Fill out the form below and click <strong>Copy signature for Desktop</strong> > highlight your signature and copy by pressing <em>ctrl + c</em> or <em>right click > copy</em></p>
+                  <p className="card-text">Fill out the form and click <strong>Copy signature for Desktop</strong> > highlight your signature and copy by pressing <em>ctrl + c</em> or <em>right click > copy</em></p>
                 </div>
                 <img className="card-img-bottom" src={Dstep1} alt="" />
               </div>
@@ -45,7 +45,7 @@ const DesktopInstructions = (props) => {
               <div className="card instructions-card">
                 <h5 className="card-header bg-info text-white">Step 3: Open your signatures panel</h5>
                 <div className="card-body">
-                  <p className="card-text">Go to <strong>Mail</strong> > <strong>Signatures</strong></p>
+                  <p className="card-text">Click the <strong>Mail</strong> tab under Outlook Options then click <strong>Signatures</strong></p>
                 </div>
                 <img className="card-img-bottom" src={Dstep3} alt="" />
               </div>

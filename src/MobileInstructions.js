@@ -30,7 +30,7 @@ const MobileInstructions = (props) => {
               <div className="card instructions-card">
                 <h5 className="card-header bg-info text-white">Step 1: Open Outlook</h5>
                 <div className="card-body card-text-outline">
-                  <p className="card-text">Fill out the form and click <strong>Copy signature for iOS</strong>. Open your Outlook app on your phone and click on your account icon on the top left hand corner to open your folders sidebar.</p>
+                  <p className="card-text">Fill out the form and click <strong>Copy signature for iOS</strong>. Open your Outlook app on your phone and click on your account icon on the top left hand corner to open the folders sidebar.</p>
                 </div>
                 <div className="card-body mobile-image mx-auto d-block">
                   <img className="card-img-bottom card-outline" src={Mstep1} alt="" />
