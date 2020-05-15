@@ -73,7 +73,7 @@ class Signature extends Component {
           <strong><span style={{ fontSize: '10pt', color: '#00703E' }}>{this.props.name}</span></strong><span style={{ fontSize: '10pt' }}> {titlePipe} {this.props.title}</span>
         </p>
         <p style={{ margin: '0in', marginBottom: '.0001pt', fontSize: '10pt', fontFamily: '"Calibri",sans-serif' }}>
-          {mobileLine} {officeLine} {faxLine} <span><a href={"mailto:" + this.props.email}><span>{this.props.email}</span></a> <span>{cityPipe} {this.props.city}{stateComma} {this.props.state}</span><span> | <a href="https://www.eci-consulting.com/">www.eci-consulting.com</a> </span></span>
+          {mobileLine} {officeLine} {faxLine} <span><a href={"mailto:" + this.props.email}>{this.props.email}</a> <span style={{ fontSize: '10pt', color: 'black' }}>{cityPipe} {this.props.city}{stateComma} {this.props.state}</span><span> | <a href="https://www.eci-consulting.com/">www.eci-consulting.com</a> </span></span>
         </p>
         {isaLine}
         {additionalLine}
