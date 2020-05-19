@@ -17,7 +17,7 @@ class Signature extends Component {
     mobileNumber = formatPhoneNumber(mobileNumber);
     let mobileLine = <span></span>;
     if (mobileNumber !== '') {
-      mobileLine = <span style={{ fontSize: '10pt' }}>m: {mobileNumber} | </span>
+      mobileLine = <span className="signature">m: {mobileNumber} | </span>
     }
 
     let officeNumber = this.props.office;
@@ -38,7 +38,7 @@ class Signature extends Component {
     if (this.props.isa !== '') {
       isaLine = (
         <p style={{ margin: '0in', marginBottom: '.0001pt', fontSize: '10pt', fontFamily: '"Calibri",sans-serif' }}>
-          <span style={{ fontSize: '10pt' }}>ISA Certified Arborist {this.props.isa}</span>
+          <span className="signature">ISA Certified Arborist {this.props.isa}</span>
         </p>
       )
     }
@@ -52,28 +52,34 @@ class Signature extends Component {
       )
     }
 
-    let titlePipe = "";
+    let titlePipe = <span></span>;
     if(this.props.title) {
-      titlePipe = "|";
+      titlePipe = <span className="signature">|</span>;;
     }
 
-    let cityPipe = "";
+    let cityPipe = <span></span>;
     if(this.props.city){
-      cityPipe = "|";
+      cityPipe = <span className="signature">|</span>;;
     }
 
-    let stateComma = "";
+    let stateComma = <span></span>;
     if(this.props.state){
-      stateComma = ","
+      stateComma = <span className="signature">,</span>;
     }
 
     return (
       <div>
         <p style={{ margin: '0in', marginBottom: '.0001pt', fontSize: '10pt', fontFamily: '"Calibri",sans-serif' }}>
-          <strong><span style={{ fontSize: '10pt', color: '#00703E' }}>{this.props.name}</span></strong><span style={{ fontSize: '10pt' }}> {titlePipe} {this.props.title}</span>
+          <strong><span style={{ fontSize: '10pt', color: '#00703E' }}>{this.props.name}</span></strong>
+          <span style={{ fontSize: '10pt' }}> {titlePipe} {this.props.title}</span>
         </p>
-        <p style={{ margin: '0in', marginBottom: '.0001pt', fontSize: '10pt', fontFamily: '"Calibri",sans-serif' }}>
-          {mobileLine} {officeLine} {faxLine} <span><a href={"mailto:" + this.props.email}>{this.props.email}</a> <span style={{ fontSize: '10pt', color: 'black' }}>{cityPipe} {this.props.city}{stateComma} {this.props.state}</span><span> | <a href="https://www.eci-consulting.com/">www.eci-consulting.com</a> </span></span>
+        <p style={{ margin: '0in', marginBottom: '.0001pt', color: 'black', fontSize: '10pt', fontFamily: '"Calibri",sans-serif' }}>
+          {mobileLine} {officeLine} {faxLine} 
+          <span className="signature">
+            <span className="signature"><a href={"mailto:" + this.props.email}>{this.props.email}</a></span>
+            <span className="signature">{cityPipe} {this.props.city}{stateComma} {this.props.state}</span>
+            <span> | <a href="https://www.eci-consulting.com/">www.eci-consulting.com</a> </span>
+          </span>
         </p>
         {isaLine}
         {additionalLine}

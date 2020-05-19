@@ -3,6 +3,7 @@ import Dstep1 from './Images/Dstep1.png';
 import Dstep2 from './Images/Dstep2.png';
 import Dstep3 from './Images/Dstep3.png';
 import Dstep4 from './Images/Dstep4.png';
+import DstepSave from './Images/DstepSave.png';
 import Dstep5 from './Images/Dstep5.png';
 
 const DesktopInstructions = (props) => {
@@ -59,9 +60,17 @@ const DesktopInstructions = (props) => {
               </div>
 
               <div className="card instructions-card">
-                <h5 className="card-header bg-info text-white">Step 5: Assign your new signature</h5>
+                <h5 className="card-header bg-info text-white">Step 5: Paste With Option: Keep Source Formatting</h5>
                 <div className="card-body">
-                  <p className="card-text">Paste your signature into the <em>Edit signature</em> box, then assign your signature to <em>New messages</em> and <em>Replies/forward</em> and click <strong>OK</strong></p>
+                  <p className="card-text">Right click in the Edit Signature box and under <em>Paste Options</em> select the first option with the paintbrush <strong>Keep Source Formatting</strong></p>
+                </div>
+                <img className="card-img-top" src={DstepSave} alt="" />
+              </div>
+
+              <div className="card instructions-card">
+                <h5 className="card-header bg-info text-white">Step 6: Assign your new signature</h5>
+                <div className="card-body">
+                  <p className="card-text">Assign your signature to <em>New messages</em> and <em>Replies/forward</em> and click <strong>OK</strong></p>
                 </div>
                 <img className="card-img-top" src={Dstep5} alt="" />
               </div>
