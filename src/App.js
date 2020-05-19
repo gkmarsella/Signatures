@@ -49,7 +49,7 @@ class App extends React.Component {
           <div className="user-display">
             <div className='form-container'>
               <div className="form-header">
-                <h5 className="card-header">Please complete this form and follow the instructions below for setting up your ECI email signature on Outlook.</h5>
+                <h5 className="card-header">Please complete this form and follow the instructions below for setting up your ECI email signature in Outlook.</h5>
                 <div className="instructions-container">
                   <DesktopInstructions />
                   <MobileInstructions />
