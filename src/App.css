@@ -175,3 +175,7 @@ iframe {
   color: black;
   font-family: "Calibri", sans-serif;
 }
+
+.important-text {
+  color: rgb(233, 32, 32);
+}
