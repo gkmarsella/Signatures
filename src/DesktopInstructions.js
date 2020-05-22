@@ -78,7 +78,7 @@ const DesktopInstructions = (props) => {
               <div className="card instructions-card">
                 <h5 className="card-header bg-info text-white">Video instructions</h5>
                 <div className="">
-                  <iframe allowFullscreen="true" title="Create an email signature video" src="https://www.microsoft.com/en-us/videoplayer/embed/RWe8Qi?pid=ocpVideo0-innerdiv-oneplayer&postJsllMsg=true&maskLevel=20&market=en-us"></iframe>
+                  <iframe allowFullScreen={true} title="Create an email signature video" src="https://www.microsoft.com/en-us/videoplayer/embed/RWe8Qi?pid=ocpVideo0-innerdiv-oneplayer&postJsllMsg=true&maskLevel=20&market=en-us"></iframe>
                 </div>
               </div>
 

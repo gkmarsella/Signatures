@@ -45,6 +45,12 @@ class App extends React.Component {
   }
 
   render() {
+    const {name, title, email, city, state} = this.state;
+    const isEnabled = [name,title,email,city,state].every(Boolean);
+    let disabledWarning = <span className="disabled-warning">Please fill out all required fields</span>
+    if(isEnabled){
+      disabledWarning = (<span></span>)
+    }
     return (
       <div>
         <div className="wrapper justify-content-center d-flex">
@@ -69,16 +75,20 @@ class App extends React.Component {
                       onChange={this.onChange}
                       placeholder="Full Name"
                       required />
+                      <small className="form-text required-field">*Required</small>
                   </div>
 
-                  <input
-                    className="form-control"
-                    name="title"
-                    type="text"
-                    value={this.state.value}
-                    onChange={this.onChange}
-                    placeholder="Title"
-                    required />
+                  <div className="form-group">
+                    <input
+                      className="form-control"
+                      name="title"
+                      type="text"
+                      value={this.state.value}
+                      onChange={this.onChange}
+                      placeholder="Title"
+                      required />
+                      <small className="form-text required-field">*Required</small>
+                    </div>
                 </div>
 
                 <div className="line-2 input-box">
@@ -138,8 +148,11 @@ class App extends React.Component {
                       onChange={this.onChange}
                       placeholder="Email"
                       required />
+                      <small className="form-text required-field">*Required</small>
                   </div>
+                </div>
 
+                <div className="input-box">
                   <div className="mb-3">
                     <input
                       className="form-control"
@@ -147,7 +160,7 @@ class App extends React.Component {
                       type="text"
                       value={this.state.value}
                       onChange={this.onChange}
-                      placeholder="Address"
+                      placeholder="Address (optional)"
                       required />
                   </div>
 
@@ -160,6 +173,7 @@ class App extends React.Component {
                       onChange={this.onChange}
                       placeholder="City"
                       required />
+                      <small className="form-text required-field">*Required</small>
                   </div>
 
                   <div className="mb-3">
@@ -222,6 +236,7 @@ class App extends React.Component {
                       <option value="WI">Wisconsin</option>
                       <option value="WY">Wyoming</option>
                     </select>
+                    <small className="form-text required-field">*Required</small>
                   </div>
 
                   <div className="mb-3">
@@ -231,7 +246,7 @@ class App extends React.Component {
                       type="text"
                       value={this.state.value}
                       onChange={this.onChange}
-                      placeholder="Zipcode"
+                      placeholder="Zipcode (optional)"
                       required />
                   </div>
 
@@ -253,12 +268,14 @@ class App extends React.Component {
                     placeholder="Additional Information (optional)" />
                 </div>
 
-                <div className="">
-                  <button type="button" className="btn eci-button" data-toggle="modal" data-target="#desktopSignatureModal">        <svg className="bi bi-laptop" width="1em" height="1em" viewBox="0 0 16 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fillRule="evenodd" d="M13.5 3h-11a.5.5 0 00-.5.5V11h12V3.5a.5.5 0 00-.5-.5zm-11-1A1.5 1.5 0 001 3.5V12h14V3.5A1.5 1.5 0 0013.5 2h-11z" clipRule="evenodd"/>
-        <path d="M0 12h16v.5a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 010 12.5V12z"/>
-        </svg> Copy signature for Desktop</button>
+                <div className="copy-buttons">
+                  {disabledWarning}
+                  <button type="button" className={ `btn eci-button ${isEnabled ? null : 'disabled'}`} tabIndex={isEnabled ? 0 : -1} data-toggle="modal" data-target="#desktopSignatureModal">        <svg className="bi bi-laptop" width="1em" height="1em" viewBox="0 0 16 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fillRule="evenodd" d="M13.5 3h-11a.5.5 0 00-.5.5V11h12V3.5a.5.5 0 00-.5-.5zm-11-1A1.5 1.5 0 001 3.5V12h14V3.5A1.5 1.5 0 0013.5 2h-11z" clipRule="evenodd" />
+                    <path d="M0 12h16v.5a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 010 12.5V12z" />
+                  </svg> Copy signature for Desktop</button>
                   <MobileSignature
+                    isEnabled={isEnabled}
                     name={this.state.name}
                     title={this.state.title}
                     mobile={this.state.mobile}
@@ -300,7 +317,7 @@ class App extends React.Component {
               <div className="modal-content">
                 <div className="modal-header noselect">
                   <h6>Highlight and copy all the content in this modal and follow the desktop directions listed at the top of the form. If you want to set your signature for iOS, close out of this modal and click the "Copy signature for iOS" button.<br /><br />
-                  <strong className="important-text">When pasting your signature on Desktop please make sure to right click the text box and choose "keep source formatting" located under the paste option. Please refer to the Desktop Instructions if you need help finding it.</strong></h6>
+                    <strong className="important-text">When pasting your signature on Desktop please make sure to right click the text box and choose "keep source formatting" located under the paste option. Please refer to the Desktop Instructions if you need help finding it.</strong></h6>
                   <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>

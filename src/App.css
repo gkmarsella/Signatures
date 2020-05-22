@@ -177,5 +177,24 @@ iframe {
 }
 
 .important-text {
-  color: rgb(233, 32, 32);
+  color: rgb(201, 201, 201);
+}
+
+.required-field {
+  color: red;
+  font-style: italic;
+}
+
+.disabled{
+  pointer-events: none;
+  background-color: rgb(211, 211, 211);
+}
+
+.disabled-warning{
+  color: red;
+  font-weight: bold;
+}
+
+.copy-buttons{
+  text-align: center;
 }
