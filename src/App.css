@@ -176,10 +176,6 @@ iframe {
   font-family: "Calibri", sans-serif;
 }
 
-.important-text {
-  color: rgb(201, 201, 201);
-}
-
 .required-field {
   color: red;
   font-style: italic;

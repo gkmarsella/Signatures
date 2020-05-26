@@ -317,7 +317,7 @@ class App extends React.Component {
               <div className="modal-content">
                 <div className="modal-header noselect">
                   <h6>Highlight and copy all the content in this modal and follow the desktop directions listed at the top of the form. If you want to set your signature for iOS, close out of this modal and click the "Copy signature for iOS" button.<br /><br />
-                    <strong className="important-text">When pasting your signature on Desktop please make sure to right click the text box and choose "keep source formatting" located under the paste option. Please refer to the Desktop Instructions if you need help finding it.</strong></h6>
+                    <strong>When pasting your signature on Desktop please make sure to right click the text box and choose "keep source formatting" located under the paste option. Please refer to the Desktop Instructions if you need help finding it.</strong></h6>
                   <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
