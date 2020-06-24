@@ -5,6 +5,7 @@ import Signature from './Signature';
 import MobileSignature from './MobileSignature';
 import DesktopInstructions from './DesktopInstructions';
 import MobileInstructions from './MobileInstructions';
+import MailInstructions from './MailInstructions';
 
 class App extends React.Component {
   constructor(props) {
@@ -57,10 +58,14 @@ class App extends React.Component {
           <div className="user-display">
             <div className='form-container'>
               <div className="form-header">
-                <h5 className="card-header">Please complete this form and follow the instructions below for setting up your ECI email signature in Outlook.</h5>
-                <div className="instructions-container">
-                  <DesktopInstructions />
-                  <MobileInstructions />
+                <h5 className="card-header">Please complete this form and follow the instructions below to create your ECI email signature.</h5>
+                <div className="button-group">
+                    <h4>Desktop Instructions</h4>
+                    <DesktopInstructions />
+                    <hr/>
+                    <h4>iPhone Instructions</h4>
+                    <MobileInstructions />
+                    <MailInstructions />
                 </div>
               </div>
               <form onSubmit={e => this.handleSubmit(e)}>
@@ -270,10 +275,10 @@ class App extends React.Component {
 
                 <div className="copy-buttons">
                   {disabledWarning}
-                  <button type="button" className={ `btn eci-button ${isEnabled ? null : 'disabled'}`} tabIndex={isEnabled ? 0 : -1} data-toggle="modal" data-target="#desktopSignatureModal">        <svg className="bi bi-laptop" width="1em" height="1em" viewBox="0 0 16 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <button type="button" className={ `btn instruction-button ${isEnabled ? null : 'disabled'}`} tabIndex={isEnabled ? 0 : -1} data-toggle="modal" data-target="#desktopSignatureModal">        <svg className="bi bi-laptop" width="1em" height="1em" viewBox="0 0 16 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M13.5 3h-11a.5.5 0 00-.5.5V11h12V3.5a.5.5 0 00-.5-.5zm-11-1A1.5 1.5 0 001 3.5V12h14V3.5A1.5 1.5 0 0013.5 2h-11z" clipRule="evenodd" />
                     <path d="M0 12h16v.5a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 010 12.5V12z" />
-                  </svg> Copy signature for Desktop</button>
+                  </svg> <strong>Copy signature for Desktop</strong></button>
                   <MobileSignature
                     isEnabled={isEnabled}
                     name={this.state.name}

@@ -9,7 +9,7 @@ body {
 }
 
 .form-control {
-  border: .5px solid rgb(104, 104, 104);
+  border: 2px solid #007942;;
 }
 
 @media only screen and (min-width: 700px) {
@@ -18,13 +18,24 @@ body {
     width: 100%;
     justify-content: center;
   }
+
+  .signature-container {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+  }
 }
+
+.user-display {
+  max-width: 100%;
+}
+
 
 .form-container, .signature-container {
   background-color: whitesmoke;
   width: 100%;
   padding: 1%;
-  /* box-shadow: .08em .1em .9em .06em rgb(56, 56, 56); */
+  box-shadow: .08em .1em .9em .06em rgb(56, 56, 56);
   padding: 1em 1em 1em;
   border-radius: 3px;
   border: 1px solid black;
@@ -112,18 +123,6 @@ body {
   height: 100%;
 }
 
-.instructions-container {
-  display: flex;
-  justify-content: center;
-  /* flex-direction: column; */
-  flex-wrap: wrap;
-  border-radius: 3px;
-  padding: 1%;
-  padding: 1em 1em 1em;
-  margin: 2em 0 2em 1em;
-  height: fit-content;
-}
-
 .instructions-card {
   width: 95%;
   margin: 0 0 5% 2%;
@@ -138,7 +137,18 @@ body {
 }
 
 .instruction-button {
-  margin: 5px;
+  border:1px solid rgb(82, 82, 82);
+  font-size:0.875;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  width: -webkit-fill-available;
+  margin: 2px;;
+  color: white;
+  background-color: #007942;
+}
+
+.instruction-button:hover {
+  background-color: #138552;
 }
 
 .card-outline {
@@ -184,6 +194,13 @@ iframe {
 .disabled{
   pointer-events: none;
   background-color: rgb(211, 211, 211);
+  border:1px solid rgb(82, 82, 82);
+  font-size:0.875;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  width: -webkit-fill-available;
+  margin: 2px;;
+  color: white;
 }
 
 .disabled-warning{
@@ -193,4 +210,15 @@ iframe {
 
 .copy-buttons{
   text-align: center;
+}
+
+.btn-icon{
+  width: 20px;
+}
+
+.button-group {
+  background-color: rgb(231, 231, 231);
+  padding: 1em;
+  margin: 1em;
+  border-radius: 0.3em;
 }
