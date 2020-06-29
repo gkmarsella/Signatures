@@ -6,6 +6,8 @@ import MobileSignature from './MobileSignature';
 import DesktopInstructions from './DesktopInstructions';
 import MobileInstructions from './MobileInstructions';
 import MailInstructions from './MailInstructions';
+import Outlook_Icon from './Images/Outlook_Icon.png';
+import Mail_Icon from './Images/Mail_Icon.png';
 
 class App extends React.Component {
   constructor(props) {
@@ -275,10 +277,12 @@ class App extends React.Component {
 
                 <div className="copy-buttons">
                   {disabledWarning}
-                  <button type="button" className={ `btn instruction-button ${isEnabled ? null : 'disabled'}`} tabIndex={isEnabled ? 0 : -1} data-toggle="modal" data-target="#desktopSignatureModal">        <svg className="bi bi-laptop" width="1em" height="1em" viewBox="0 0 16 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M13.5 3h-11a.5.5 0 00-.5.5V11h12V3.5a.5.5 0 00-.5-.5zm-11-1A1.5 1.5 0 001 3.5V12h14V3.5A1.5 1.5 0 0013.5 2h-11z" clipRule="evenodd" />
-                    <path d="M0 12h16v.5a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 010 12.5V12z" />
-                  </svg> <strong>Copy signature for Desktop</strong></button>
+                  {/* Desktop Signature */}
+                  <button type="button" className={ `btn instruction-button ${isEnabled ? null : 'disabled'}`} tabIndex={isEnabled ? 0 : -1} data-toggle="modal" data-target="#desktopSignatureModal">
+                    <img className="btn-icon" src={Outlook_Icon} alt="Outlook Icon" /><strong> Copy signature for Windows Outlook application</strong>
+                  </button>
+
+                  {/* HTML Signature */}
                   <MobileSignature
                     isEnabled={isEnabled}
                     name={this.state.name}
@@ -293,6 +297,11 @@ class App extends React.Component {
                     zipcode={this.state.zipcode}
                     isa={this.state.isa}
                     additional={this.state.additional} />
+
+                  {/* Mail Signature */}
+                  <button type="button" className={ `btn instruction-button ${isEnabled ? null : 'disabled'}`} tabIndex={isEnabled ? 0 : -1} data-toggle="modal" data-target="#mailSignatureModal">
+                    <img className="btn-icon"src={Mail_Icon} alt="Mail Icon"/><strong> Copy signature for iOS Mail application</strong>
+                  </button>
                 </div>
               </form>
             </div>
@@ -317,15 +326,50 @@ class App extends React.Component {
             </div>
           </div>
 
+        {/* Modal for Desktop Signature */}
           <div className="modal fade" id="desktopSignatureModal" tabIndex="-1" role="dialog" aria-labelledby="desktopSignatureModalTitle" aria-hidden="true">
             <div className="modal-dialog" role="document">
               <div className="modal-content">
                 <div className="modal-header noselect">
-                  <h6>Highlight and copy all the content in this modal and follow the desktop directions listed at the top of the form. If you want to set your signature for iOS, close out of this modal and click the "Copy signature for iOS" button.<br /><br />
-                    <strong>When pasting your signature on Desktop please make sure to right click the text box and choose "keep source formatting" located under the paste option. Please refer to the Desktop Instructions if you need help finding it.</strong></h6>
+                  <h1>Outlook For Windows Signature</h1>
                   <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
+                </div>
+                <div className="modal-header noselect">
+                  <h6>Highlight and copy all the content in this modal and follow the directions at the top of the form.</h6>
+                </div>
+                <div className="modal-body">
+                  <Signature
+                    name={this.state.name}
+                    title={this.state.title}
+                    mobile={this.state.mobile}
+                    office={this.state.office}
+                    fax={this.state.fax}
+                    email={this.state.email}
+                    address={this.state.address}
+                    city={this.state.city}
+                    state={this.state.state}
+                    zipcode={this.state.zipcode}
+                    isa={this.state.isa}
+                    additional={this.state.additional} />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Modal for Mail */}
+          <div className="modal fade" id="mailSignatureModal" tabIndex="-1" role="dialog" aria-labelledby="mailSignatureModal" aria-hidden="true">
+            <div className="modal-dialog" role="document">
+              <div className="modal-content">
+                <div className="modal-header noselect">
+                  <h1>iOS Mail App Signature</h1>
+                  <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div className="modal-header noselect">
+                  <h6>Highlight and copy all the content in this modal and follow the directions at the top of the form.</h6>
                 </div>
                 <div className="modal-body">
                   <Signature

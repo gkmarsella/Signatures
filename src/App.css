@@ -103,6 +103,7 @@ body {
 .alert-shown {
   opacity: 1;
   transition: all 250ms linear;
+  z-index: 99;
 }
 
 .alert-hidden {

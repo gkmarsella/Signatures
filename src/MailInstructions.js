@@ -31,9 +31,19 @@ const MobileInstructions = (props) => {
             <div className="modal-body instructions-modal-body">
 
               <div className="card instructions-card">
-                <h5 className="card-header bg-info text-white">Step 1: Open Settings</h5>
+                <h5 className="card-header bg-info text-white">Step 1: Copy your signature</h5>
                 <div className="card-body card-text-outline">
-                  <p className="card-text">Open <strong>Settings</strong>. If you can not find it, swipe down on your home screen and search for <em>"Settings"</em>.</p>
+                  <p className="card-text">Highlight and copy your signature.</p>
+                </div>
+                <div className="card-body mobile-image mx-auto d-block">
+                  <img className="card-img-bottom card-outline" src={M0} alt="" />
+                </div>
+              </div>
+
+              <div className="card instructions-card">
+                <h5 className="card-header bg-info text-white">Step 2: Open Settings</h5>
+                <div className="card-body card-text-outline">
+                  <p className="card-text">Open <strong>Settings</strong> by either tapping the icon or swiping down and searching for <em>"Settings"</em>.</p>
                 </div>
                 <div className="card-body mobile-image mx-auto d-block">
                   <img className="card-img-bottom card-outline" src={M1} alt="" />
@@ -41,7 +51,7 @@ const MobileInstructions = (props) => {
               </div>
 
               <div className="card instructions-card">
-                <h5 className="card-header bg-info text-white">Step 2: Open Mail Settings</h5>
+                <h5 className="card-header bg-info text-white">Step 3: Open Mail Settings</h5>
                 <div className="card-body card-text-outline">
                   <p className="card-text">Scroll down and click <strong>Mail</strong>.</p>
                 </div>
@@ -51,9 +61,9 @@ const MobileInstructions = (props) => {
               </div>
 
               <div className="card instructions-card">
-                <h5 className="card-header bg-info text-white">Step 3: Open signature</h5>
+                <h5 className="card-header bg-info text-white">Step 4: Open Signature</h5>
                 <div className="card-body card-text-outline">
-                  <p className="card-text">Click <em>Signature</em> under the Mail group.</p>
+                  <p className="card-text">Click <strong>Signature</strong></p>
                 </div>
                 <div className="card-body mobile-image mx-auto d-block">
                   <img className="card-img-bottom card-outline" src={M3} alt="" />
@@ -61,9 +71,9 @@ const MobileInstructions = (props) => {
               </div>
 
               <div className="card instructions-card">
-                <h5 className="card-header bg-info text-white">Step 4: Add your signature</h5>
+                <h5 className="card-header bg-info text-white">Step 5: Add Your Signature</h5>
                 <div className="card-body card-text-outline">
-                  <p className="card-text">Tap and hold the textarea and select <em>paste</em> to enter the HTML you copied in step 1.</p>
+                  <p className="card-text">Copy your signature into the empty box.</p>
                 </div>
                 <div className="card-body mobile-image mx-auto d-block">
                   <img className="card-img-bottom card-outline" src={M4} alt="" />
@@ -71,12 +81,22 @@ const MobileInstructions = (props) => {
               </div>
 
               <div className="card instructions-card">
-                <h5 className="card-header bg-info text-white">Step 5: Open a new email and check everything was copied over correctly</h5>
+                <h5 className="card-header bg-info text-white">Step 6: Reformat Your Signature</h5>
                 <div className="card-body card-text-outline">
-                  <p className="card-text">Back out of settings and open a new email. Check that your signature was properly copied over.</p>
+                  <p className="card-text">Undo the formatting Apple automatically applies by using three fingers to swipe left. When asked if you want to Undo Change Attributes, click <strong>Undo</strong></p>
                 </div>
                 <div className="card-body mobile-image mx-auto d-block">
                   <img className="card-img-bottom card-outline" src={M5} alt="" />
+                </div>
+              </div>
+
+              <div className="card instructions-card">
+                <h5 className="card-header bg-info text-white">Step 7: Reformat Your Signature</h5>
+                <div className="card-body card-text-outline">
+                  <p className="card-text">Your signature should now be formatted properly. Make sure everything is working as intended by opening up Mail and sending yourself a test email.</p>
+                </div>
+                <div className="card-body mobile-image mx-auto d-block">
+                  <img className="card-img-bottom card-outline" src={M6} alt="" />
                 </div>
               </div>
 
