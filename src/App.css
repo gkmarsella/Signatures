@@ -143,6 +143,8 @@ body {
   overflow-wrap: break-word;
   max-width: 100%;
   width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
   margin: 2px;;
   color: white;
   background-color: #007942;
@@ -200,6 +202,8 @@ iframe {
   overflow-wrap: break-word;
   max-width: 100%;
   width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
   margin: 2px;;
   color: white;
 }
