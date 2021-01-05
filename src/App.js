@@ -276,14 +276,14 @@ class App extends React.Component {
                 </div>
 
                 <div className="copy-buttons">
-                  {disabledWarning}
+                {disabledWarning}
                   {/* Desktop Signature */}
                   <button type="button" className={ `btn instruction-button ${isEnabled ? null : 'disabled'}`} tabIndex={isEnabled ? 0 : -1} data-toggle="modal" data-target="#desktopSignatureModal">
                     <img className="btn-icon" src={Outlook_Icon} alt="Outlook Icon" /><strong> Copy signature for Windows Outlook application</strong>
                   </button>
 
                   {/* HTML Signature */}
-                  <MobileSignature
+                  {/* <MobileSignature
                     isEnabled={isEnabled}
                     name={this.state.name}
                     title={this.state.title}
@@ -296,11 +296,11 @@ class App extends React.Component {
                     state={this.state.state}
                     zipcode={this.state.zipcode}
                     isa={this.state.isa}
-                    additional={this.state.additional} />
+                    additional={this.state.additional} /> */}
 
                   {/* Mail Signature */}
                   <button type="button" className={ `btn instruction-button ${isEnabled ? null : 'disabled'}`} tabIndex={isEnabled ? 0 : -1} data-toggle="modal" data-target="#mailSignatureModal">
-                    <img className="btn-icon"src={Mail_Icon} alt="Mail Icon"/><strong> Copy signature for iOS Mail application</strong>
+                  <img className="btn-icon" src={Outlook_Icon} alt="Outlook Icon" /><img className="btn-icon"src={Mail_Icon} alt="Mail Icon"/><strong> Copy signature for iOS</strong>
                   </button>
                 </div>
               </form>

@@ -1,9 +1,10 @@
 import React from 'react';
-import Mstep1 from './Images/Mstep1.png';
+import M0 from './Images/M0.png';
 import Mstep2 from './Images/Mstep2.png';
 import Mstep3 from './Images/Mstep3.png';
 import Mstep4 from './Images/Mstep4.png';
 import Mstep5 from './Images/Mstep5.png';
+import MstepNew from './Images/MstepNew.png';
 import Outlook_Icon from './Images/Outlook_Icon.png';
 
 const MobileInstructions = (props) => {
@@ -29,17 +30,17 @@ const MobileInstructions = (props) => {
               <div className="card instructions-card">
                 <h5 className="card-header bg-info text-white">Step 1: Open Outlook</h5>
                 <div className="card-body card-text-outline">
-                  <p className="card-text">Fill out the form and click <strong>Copy signature for iOS</strong>. Open your Outlook app on your phone and click on your account icon on the top left hand corner to open the folders sidebar.</p>
+                  <p className="card-text">Fill out the form and click <strong>Copy signature for iOS</strong>.</p>
                 </div>
                 <div className="card-body mobile-image mx-auto d-block">
-                  <img className="card-img-bottom card-outline" src={Mstep1} alt="" />
+                  <img className="card-img-bottom card-outline" src={M0} alt="" />
                 </div>
               </div>
 
               <div className="card instructions-card">
                 <h5 className="card-header bg-info text-white">Step 2: Open account settings</h5>
                 <div className="card-body card-text-outline">
-                  <p className="card-text">Click the cogwheel on the bottom left hand corner.</p>
+                  <p className="card-text">Open the Outlook app on your phone and click on your account icon on the top left hand corner to open the folders sidebar. Click the cogwheel on the bottom left hand corner.</p>
                 </div>
                 <div className="card-body mobile-image mx-auto d-block">
                   <img className="card-img-bottom card-outline" src={Mstep2} alt="" />
@@ -49,7 +50,7 @@ const MobileInstructions = (props) => {
               <div className="card instructions-card">
                 <h5 className="card-header bg-info text-white">Step 3: Open signature</h5>
                 <div className="card-body card-text-outline">
-                  <p className="card-text">Click <em>Signature</em> under the Mail group.</p>
+                  <p className="card-text">Click <strong>Signature</strong> under the Mail group.</p>
                 </div>
                 <div className="card-body mobile-image mx-auto d-block">
                   <img className="card-img-bottom card-outline" src={Mstep3} alt="" />
@@ -59,10 +60,10 @@ const MobileInstructions = (props) => {
               <div className="card instructions-card">
                 <h5 className="card-header bg-info text-white">Step 4: Add your signature</h5>
                 <div className="card-body card-text-outline">
-                  <p className="card-text">Tap and hold the textarea and select <em>paste</em> to enter the HTML you copied in step 1.</p>
+                  <p className="card-text">Tap and hold the textarea and select <strong>paste</strong>.</p>
                 </div>
                 <div className="card-body mobile-image mx-auto d-block">
-                  <img className="card-img-bottom card-outline" src={Mstep4} alt="" />
+                  <img className="card-img-bottom card-outline" src={MstepNew} alt="" />
                 </div>
               </div>
 
