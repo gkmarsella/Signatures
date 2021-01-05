@@ -29,7 +29,7 @@ const DesktopInstructions = (props) => {
               <div className="card instructions-card">
                 <h5 className="card-header bg-info text-white">Step 1: Fill out the form and copy signature</h5>
                 <div className="card-body">
-                  <p className="card-text">Fill out the form and click <strong>Copy signature for Desktop</strong> > highlight your signature and copy by pressing <em>ctrl + c</em> or <em>right click > copy</em></p>
+                  <p className="card-text">Fill out the form and click <strong>Copy signature for Desktop</strong> then highlight your signature and copy by pressing <em>ctrl + c</em> or <em>right click then copy</em></p>
                 </div>
                 <img className="card-img-bottom" src={Dstep1} alt="" />
               </div>
@@ -37,7 +37,7 @@ const DesktopInstructions = (props) => {
               <div className="card instructions-card">
                 <h5 className="card-header bg-info text-white">Step 2: Open account options</h5>
                 <div className="card-body">
-                  <p className="card-text">In your outlook Desktop application click <strong>File</strong> > <strong>Options</strong></p>
+                  <p className="card-text">In your outlook Desktop application click <strong>File</strong> then <strong>Options</strong></p>
                 </div>
                 <img className="card-img-bottom" src={Dstep2} alt="" />
               </div>
