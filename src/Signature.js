@@ -67,6 +67,15 @@ class Signature extends Component {
       stateComma = <span className="signature">,</span>;
     }
 
+    let addressLine = <span></span>
+    if (this.props.city !== '' && this.props.state !== ''){
+      addressLine = (
+        <p className="signature-line">
+          <span className="signature">{this.props.address}{addressComma}{this.props.city}{stateComma} {this.props.state} {this.props.zipcode}</span>
+      </p>
+      )
+    }    
+
     return (
       <div>
         <p className="signature-line">
@@ -79,9 +88,7 @@ class Signature extends Component {
             <span className="signature"><a href={"mailto:" + this.props.email}>{this.props.email}</a></span>
           </span>
         </p>
-        <p className="signature-line">
-          <span className="signature">{this.props.address}{addressComma}{this.props.city}{stateComma} {this.props.state} {this.props.zipcode}</span>
-        </p>
+        {addressLine}
         <p className="signature-line">
           <span><a href="https://www.eci-consulting.com/">www.eci-consulting.com</a></span>
         </p>

@@ -48,8 +48,8 @@ class App extends React.Component {
   }
 
   render() {
-    const {name, title, email, state} = this.state;
-    const isEnabled = [name,title,email,state].every(Boolean);
+    const {name, title, email} = this.state;
+    const isEnabled = [name,title,email].every(Boolean);
     let disabledWarning = <span className="disabled-warning">Please fill out all required fields</span>
     if(isEnabled){
       disabledWarning = (<span></span>)
@@ -178,7 +178,7 @@ class App extends React.Component {
                       type="text"
                       value={this.state.value}
                       onChange={this.onChange}
-                      placeholder="City"
+                      placeholder="City (optional)"
                       required />
                   </div>
 
@@ -189,7 +189,7 @@ class App extends React.Component {
                       id="state"
                       onChange={this.onChange}
                       required>
-                      <option value="" defaultValue>State</option>
+                      <option value="" defaultValue>State (optional)</option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>
@@ -242,7 +242,6 @@ class App extends React.Component {
                       <option value="WI">Wisconsin</option>
                       <option value="WY">Wyoming</option>
                     </select>
-                    <small className="form-text required-field">*Required</small>
                   </div>
 
                   <div className="mb-3">
