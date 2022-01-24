@@ -2,6 +2,7 @@ body {
   background-image: url('https://www.eci-consulting.com/wp-content/uploads/2018/02/1.0Home_Experience.jpg');
   background-position: center;
   background-attachment: fixed;
+  line-height: 1;
 }
 
 .wrapper {
