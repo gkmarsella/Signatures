@@ -115,7 +115,7 @@ class Signature extends Component {
     {isaLine}
     {additionalLine}
     <p className="signature-line">
-       {this.props.logo == "1" ? fifty : <img src={tagtransp}/>}
+       {this.props.logo == "1" ? fifty : withtag}
     </p>
     {icons}
     <p style={{ margin: '0in', marginBottom: '.0001pt', fontSize: '8pt', fontFamily: '"Calibri",sans-serif' }}>The information contained in this message is PRIVATE and PROPRIETARY information, which may also be subject to the company-client privilege and work product doctrine. This information is intended only for the individual or entity named above. If the reader of this message is not the intended recipient, you are hereby notified that any use, dissemination, distribution or copy of this message is strictly prohibited. If you have received this message in error, please notify the sender by return e-mail and destroy all copies of the message.</p>
