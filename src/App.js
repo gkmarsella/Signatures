@@ -10,6 +10,7 @@ import Outlook_Icon from './Images/Outlook_Icon.png';
 import Mail_Icon from './Images/Mail_Icon.png';
 import circle from './Images/circle.png';
 import withtagline from './Images/withtagline.png';
+import tagtransp from './Images/tagtransp.png';
 
 class App extends React.Component {
   constructor(props) {
@@ -293,7 +294,7 @@ class App extends React.Component {
                   <h4>Choose a logo</h4>
                   <div className="logo-box">
                     <div className={this.state.logo == "1" ? "selected-icon" : ""} name="logo" value="1" onClick={this.logoOne}><img src={circle}/></div>
-                    <div className={this.state.logo == "2" ? "selected-icon" : ""} name="logo" value="2" onClick={this.logoTwo}><img src={withtagline}/></div>
+                    <div className={this.state.logo == "2" ? "selected-icon" : ""} name="logo" value="2" onClick={this.logoTwo}><img src={tagtransp}/></div>
                   </div>
                 </div>
 
