@@ -184,7 +184,7 @@ iframe {
 
 .signature-line{
   margin: 0in;
-  margin-bottom: .0001pt;
+  /* margin-bottom: .0001pt; */
   font-size: 10pt;
   color: black;
   font-family: "Calibri", sans-serif;
@@ -224,6 +224,19 @@ iframe {
 
 .button-group {
   background-color: rgb(231, 231, 231);
+  padding: 1em;
+  margin: 1em;
+  border-radius: 0.3em;
+}
+
+.selected-icon {
+  border-style: solid;
+  border-color: red;
+}
+
+.logo-box {
+  display: flex;
+  justify-content: space-around;
   padding: 1em;
   margin: 1em;
   border-radius: 0.3em;

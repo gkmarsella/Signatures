@@ -8,6 +8,8 @@ import MobileInstructions from './MobileInstructions';
 import MailInstructions from './MailInstructions';
 import Outlook_Icon from './Images/Outlook_Icon.png';
 import Mail_Icon from './Images/Mail_Icon.png';
+import circle from './Images/circle.png';
+import withtagline from './Images/withtagline.png';
 
 class App extends React.Component {
   constructor(props) {
@@ -26,7 +28,8 @@ class App extends React.Component {
       isa: '',
       additional: '',
       copied: false,
-      formValidated: false
+      formValidated: false,
+      logo: "1"
     }
   }
 
@@ -46,6 +49,19 @@ class App extends React.Component {
       formValidated: true
     })
   }
+
+  logoOne = event => {
+    this.setState({
+      logo: "1"
+    })
+  }
+
+  logoTwo = event => {
+    this.setState({
+      logo: "2"
+    })
+  }
+
 
   render() {
     const {name, title, email} = this.state;
@@ -273,28 +289,20 @@ class App extends React.Component {
                     placeholder="Additional Information (optional)" />
                 </div>
 
+                <div>
+                  <h4>Choose a logo</h4>
+                  <div className="logo-box">
+                    <div className={this.state.logo == "1" ? "selected-icon" : ""} name="logo" value="1" onClick={this.logoOne}><img src={circle}/></div>
+                    <div className={this.state.logo == "2" ? "selected-icon" : ""} name="logo" value="2" onClick={this.logoTwo}><img src={withtagline}/></div>
+                  </div>
+                </div>
+
                 <div className="copy-buttons">
                 {disabledWarning}
                   {/* Desktop Signature */}
                   <button type="button" className={ `btn instruction-button ${isEnabled ? null : 'disabled'}`} tabIndex={isEnabled ? 0 : -1} data-toggle="modal" data-target="#desktopSignatureModal">
                     <img className="btn-icon" src={Outlook_Icon} alt="Outlook Icon" /><strong> Copy signature for Windows Outlook application</strong>
                   </button>
-
-                  {/* HTML Signature */}
-                  {/* <MobileSignature
-                    isEnabled={isEnabled}
-                    name={this.state.name}
-                    title={this.state.title}
-                    mobile={this.state.mobile}
-                    office={this.state.office}
-                    fax={this.state.fax}
-                    email={this.state.email}
-                    address={this.state.address}
-                    city={this.state.city}
-                    state={this.state.state}
-                    zipcode={this.state.zipcode}
-                    isa={this.state.isa}
-                    additional={this.state.additional} /> */}
 
                   {/* Mail Signature */}
                   <button type="button" className={ `btn instruction-button ${isEnabled ? null : 'disabled'}`} tabIndex={isEnabled ? 0 : -1} data-toggle="modal" data-target="#mailSignatureModal">
@@ -319,7 +327,8 @@ class App extends React.Component {
                   state={this.state.state}
                   zipcode={this.state.zipcode}
                   isa={this.state.isa}
-                  additional={this.state.additional} />
+                  additional={this.state.additional}
+                  logo={this.state.logo} />
               </div>
             </div>
           </div>
@@ -350,7 +359,8 @@ class App extends React.Component {
                     state={this.state.state}
                     zipcode={this.state.zipcode}
                     isa={this.state.isa}
-                    additional={this.state.additional} />
+                    additional={this.state.additional}
+                    logo={this.state.logo} />
                 </div>
               </div>
             </div>
@@ -382,7 +392,8 @@ class App extends React.Component {
                     state={this.state.state}
                     zipcode={this.state.zipcode}
                     isa={this.state.isa}
-                    additional={this.state.additional} />
+                    additional={this.state.additional}
+                    logo={this.state.logo} />
                 </div>
               </div>
             </div>
