@@ -109,12 +109,9 @@ class Signature extends Component {
       <b><span style={{ color: '#00703E' }}>{this.props.name}</span></b><span style={{ fontSize: '10pt' }}> {titlePipe} {this.props.title}</span>
     </p>
     <p className="signature-line">
-      {mobileLine} {officeLine} {faxLine} <a href={"mailto:" + this.props.email}>{this.props.email}</a>
+      {mobileLine} {officeLine} {faxLine} <a href={"mailto:" + this.props.email}>{this.props.email}</a> | <a href="https://www.eci-consulting.com/">www.eci-consulting.com</a>
     </p>
     {addressLine}
-    <p className="signature-line">
-      <div><a href="https://www.eci-consulting.com/">www.eci-consulting.com</a></div>
-    </p>
     {isaLine}
     {additionalLine}
     <p className="signature-line">
