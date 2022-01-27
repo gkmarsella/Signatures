@@ -301,14 +301,18 @@ class App extends React.Component {
                 <div className="copy-buttons">
                 {disabledWarning}
                   {/* Desktop Signature */}
+                  <div>
                   <button type="button" className={ `btn instruction-button ${isEnabled ? null : 'disabled'}`} tabIndex={isEnabled ? 0 : -1} data-toggle="modal" data-target="#desktopSignatureModal">
-                    <img className="btn-icon" src={Outlook_Icon} alt="Outlook Icon" /><strong> Copy signature for Windows Outlook application</strong>
+                    <img className="btn-icon" src={Outlook_Icon} alt="Outlook Icon" /><b> Copy signature for Windows Outlook application</b>
                   </button>
+                  </div>
 
                   {/* Mail Signature */}
+                  <div>
                   <button type="button" className={ `btn instruction-button ${isEnabled ? null : 'disabled'}`} tabIndex={isEnabled ? 0 : -1} data-toggle="modal" data-target="#mailSignatureModal">
-                  <img className="btn-icon" src={Outlook_Icon} alt="Outlook Icon" /><img className="btn-icon"src={Mail_Icon} alt="Mail Icon"/><strong> Copy signature for iOS</strong>
+                  <img className="btn-icon" src={Outlook_Icon} alt="Outlook Icon" /><img className="btn-icon"src={Mail_Icon} alt="Mail Icon"/><b> Copy signature for iOS</b>
                   </button>
+                  </div>
                 </div>
               </form>
             </div>
