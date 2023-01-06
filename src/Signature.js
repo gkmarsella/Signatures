@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import fifty from './Images/fiftylogo';
-import withtag from './Images/withtag';
 import icons from './icons';
-import tagtransp from './Images/tagtransp.png';
+import ECILogo from './Images/ECILogo.png';
 
 class Signature extends Component {
   render() {
@@ -114,10 +112,14 @@ class Signature extends Component {
     {addressLine}
     {isaLine}
     {additionalLine}
-    <p className="signature-line">
-       {this.props.logo == "1" ? fifty : withtag}
-    </p>
     {icons}
+    <p className="signature-line" style={{paddingTop: '0.1in', paddingBottom: '0.1in'}}><img 
+      src={ECILogo} 
+      height="40">
+      
+      </img>
+    </p>
+    <p className="signature-line"><strong><em><div style={{ fontSize: '13px', color: '#00703E' }}>&ldquo;Safely delivering sustainable solutions that are innovative by nature.&rdquo;</div></em></strong></p>
     <p style={{ margin: '0in', marginBottom: '.0001pt', fontSize: '8pt', fontFamily: '"Calibri",sans-serif' }}>The information contained in this message is PRIVATE and PROPRIETARY information, which may also be subject to the company-client privilege and work product doctrine. This information is intended only for the individual or entity named above. If the reader of this message is not the intended recipient, you are hereby notified that any use, dissemination, distribution or copy of this message is strictly prohibited. If you have received this message in error, please notify the sender by return e-mail and destroy all copies of the message.</p>
   </div>
     );

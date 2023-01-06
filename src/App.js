@@ -29,8 +29,7 @@ class App extends React.Component {
       isa: '',
       additional: '',
       copied: false,
-      formValidated: false,
-      logo: "1"
+      formValidated: false
     }
   }
 
@@ -51,22 +50,23 @@ class App extends React.Component {
     })
   }
 
-  logoOne = event => {
-    this.setState({
-      logo: "1"
-    })
-  }
+  // 50 year logo
+  // logoOne = event => {
+  //   this.setState({
+  //     logo: "1"
+  //   })
+  // }
 
-  logoTwo = event => {
-    this.setState({
-      logo: "2"
-    })
-  }
+  // logoTwo = event => {
+  //   this.setState({
+  //     logo: "2"
+  //   })
+  // }
 
 
   render() {
-    const {name, title, email} = this.state;
-    const isEnabled = [name,title,email].every(Boolean);
+    const {name, title, email, mobile} = this.state;
+    const isEnabled = [name,title,email,mobile].every(Boolean);
     let disabledWarning = <span className="disabled-warning">Please fill out all required fields</span>
     if(isEnabled){
       disabledWarning = (<span></span>)
@@ -129,7 +129,9 @@ class App extends React.Component {
                         type="tel"
                         value={this.state.value}
                         onChange={mobile => this.setState({ mobile })}
-                        placeholder="Mobile number (optional)" />
+                        placeholder="Mobile number" 
+                        required />
+                        <small className="form-text required-field">*Required</small>
                     </div>
 
                     <div className="mb-3">
@@ -288,29 +290,22 @@ class App extends React.Component {
                     value={this.state.value}
                     onChange={this.onChange}
                     placeholder="Additional Information (optional)" />
-                </div>
-
-                <div>
-                  <h4>Choose a logo</h4>
-                  <div className="logo-box">
-                    <div className={this.state.logo == "1" ? "selected-icon" : ""} name="logo" value="1" onClick={this.logoOne}><img src={circle}/></div>
-                    <div className={this.state.logo == "2" ? "selected-icon" : ""} name="logo" value="2" onClick={this.logoTwo}><img src={tagtransp}/></div>
-                  </div>
-                </div>
+                </div> 
 
                 <div className="copy-buttons">
                 {disabledWarning}
                   {/* Desktop Signature */}
-                  <div>
+                  {/* <div>
                   <button type="button" className={ `btn instruction-button ${isEnabled ? null : 'disabled'}`} tabIndex={isEnabled ? 0 : -1} data-toggle="modal" data-target="#desktopSignatureModal">
                     <img className="btn-icon" src={Outlook_Icon} alt="Outlook Icon" /><b> Copy signature for Windows Outlook application</b>
                   </button>
-                  </div>
+                  </div> */}
 
                   {/* Mail Signature */}
                   <div>
                   <button type="button" className={ `btn instruction-button ${isEnabled ? null : 'disabled'}`} tabIndex={isEnabled ? 0 : -1} data-toggle="modal" data-target="#mailSignatureModal">
-                  <img className="btn-icon" src={Outlook_Icon} alt="Outlook Icon" /><img className="btn-icon"src={Mail_Icon} alt="Mail Icon"/><b> Copy signature for iOS</b>
+                  {/* <img className="btn-icon" src={Outlook_Icon} alt="Outlook Icon" /><img className="btn-icon"src={Mail_Icon} alt="Mail Icon"/> */}
+                  <b> Copy signature</b>
                   </button>
                   </div>
                 </div>
@@ -332,8 +327,7 @@ class App extends React.Component {
                   state={this.state.state}
                   zipcode={this.state.zipcode}
                   isa={this.state.isa}
-                  additional={this.state.additional}
-                  logo={this.state.logo} />
+                  additional={this.state.additional} />
               </div>
             </div>
           </div>
@@ -364,8 +358,7 @@ class App extends React.Component {
                     state={this.state.state}
                     zipcode={this.state.zipcode}
                     isa={this.state.isa}
-                    additional={this.state.additional}
-                    logo={this.state.logo} />
+                    additional={this.state.additional}/>
                 </div>
               </div>
             </div>
@@ -397,8 +390,7 @@ class App extends React.Component {
                     state={this.state.state}
                     zipcode={this.state.zipcode}
                     isa={this.state.isa}
-                    additional={this.state.additional}
-                    logo={this.state.logo} />
+                    additional={this.state.additional}/>
                 </div>
               </div>
             </div>
